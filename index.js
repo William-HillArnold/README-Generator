@@ -24,12 +24,13 @@ const promptUser = () => {
     { type: 'input',
     name: 'license',
     message: 'Please list your license.' },
+
 ]);
 }
 
  const gernerateREADME = ({title, description, installation, usage, credits, license}) =>
     `
-     ${title}
+    ${title}
     -- Description -- 
     ${description}
     -- Installation --
@@ -43,16 +44,16 @@ const promptUser = () => {
     `;
 
     const init = () => {
-   promptUser()
-
-    .then((answers) => fs.writeFileSync('README.md', gernerateREADME(answers)))
-    .then(() => console.log('Successfully created README.md'))
-    .catch((err) => console.log(err));
-
-   };
-
- init();
-
+        promptUser()
+     
+         .then((answers) => fs.writeFileSync('README.md', gernerateREADME(answers)))
+         .then(() => console.log('Successfully created README.md'))
+         .catch((err) => console.log(err));
+     
+        };
+     
+      init();
+     
 /*
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
